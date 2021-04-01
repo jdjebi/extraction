@@ -14,8 +14,6 @@ with MailBox('imap.gmail.com').login(EMAIL, PASSWORD, initial_folder='INBOX') as
     print("Connexion OK")
     print("Découverte des messages...")
 
-    msgs_data = mailbox.fetch()
-
     print("Découverte terminée")
     print("Analyse de la découverte:\n")
 
