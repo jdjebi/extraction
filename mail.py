@@ -39,12 +39,13 @@ with MailBox('imap.gmail.com').login(EMAIL, PASSWORD, initial_folder='INBOX') as
 
     print("{} messages découverts".format(nbr_msgs))
     print("{} messages découverts avec pièces jointes".format(nbr_msgs_pj))
+
     """
     for m in msgs:
         print(m)
     """
+    print()
 
-    
     liste_data_marchands=get_marchands("marchands.csv")
 
     for message in  msgs_pj:
@@ -59,12 +60,16 @@ with MailBox('imap.gmail.com').login(EMAIL, PASSWORD, initial_folder='INBOX') as
 
             for att in message.attachments:
             
-                ##print(att.filename, att.content_type)
-
                 chemin_pj = gestion_redondance(att.filename,chemin)
+
+                print("Enregistrement du fichier {}".format(chemin_pj))
         
                 with open(chemin_pj, 'wb') as f:
                     f.write(att.payload)
+
+    print()
+    print("Enregistrement terminé.")
+
 """
     for att in msg.attachments:
         print(att.filename, att.content_type)

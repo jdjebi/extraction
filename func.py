@@ -29,13 +29,20 @@ def creation_dossier(marchand):
 
     return chemin
 
-def gestion_redondance(pj_name,chemin):
+def gestion_redondance(pj_name,chemin,offset=0):
     """gérer la redondance du nom des pièces jointes par ajout de surfixe numérique ordonné"""
     for root, dirs, files in os.walk(chemin, topdown=False):
         if pj_name in files:
             c = files.count(pj_name)
             if c >= 1:
-                pj_name = format_pj_name(pj_name,c)
+                pj_name_temp = format_pj_name(pj_name)
+                while pj_name_temp in files:
+                    c  += 1
+                    pj_name_temp = format_pj_name(pj_name,c)
+                pj_name = pj_name_temp
+                
+    return os.path.join(chemin,pj_name)
+     
     return os.path.join(chemin,pj_name)
 
 def format_pj_name(pj_name,nbr_occurences):
