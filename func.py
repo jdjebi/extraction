@@ -35,7 +35,7 @@ def gestion_redondance(pj_name,chemin,offset=0):
         if pj_name in files:
             c = files.count(pj_name)
             if c >= 1:
-                pj_name_temp = format_pj_name(pj_name)
+                pj_name_temp = format_pj_name(pj_name,c)
                 while pj_name_temp in files:
                     c  += 1
                     pj_name_temp = format_pj_name(pj_name,c)
