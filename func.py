@@ -1,10 +1,11 @@
 import os
+import csv
 
 def get_marchands(marchands_file):
     """ recuperer les éléments necessaire contenu dans le fichier initial"""
     liste_data_marchands= {}
 
-    with open(marchands_file, newline='') as csvfile:
+    with open(marchands_file, newline='',encoding="utf-8") as csvfile:
         spamreader = csv.reader(csvfile,delimiter=";")
         for row in spamreader:
             liste_data_marchands[row[4]]={
@@ -16,9 +17,9 @@ def get_marchands(marchands_file):
 
 def email_in(email,liste_marchands):
     """ verifier si un email de la boite de reception correspond à un email de la liste des marchands"""
-   return liste_marchands.get(email)
+    return liste_marchands.get(email)
 
-def creation_dossier(marchand,pj=None):
+def creation_dossier(marchand):
     """créer un dossier recevant les pièces jointes d'un marchants"""
     chemin="marchands\{ville}\{nom_marchand}".format(ville=marchand["ville"],nom_marchand=marchand["nom"])
     try:
