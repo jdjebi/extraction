@@ -37,13 +37,12 @@ with MailBox('imap.gmail.com').login(EMAIL, PASSWORD, initial_folder='INBOX') as
 
     nbr_msgs_pj = len(msgs_pj)
 
-    print(msgs_pj)
-
     print("{} messages découverts".format(nbr_msgs))
     print("{} messages découverts avec pièces jointes".format(nbr_msgs_pj))
-
+    """
     for m in msgs:
         print(m)
+    """
 
     
     liste_data_marchands=get_marchands("marchands.csv")
