@@ -1,0 +1,54 @@
+le pentest est une méthode d’évaluation de la sécurité informatique 
+d’une entreprise qui peut aider une société à améliorer sa protection numérique
+
+PTES est l’acronyme de Penetration Testing Execution Standard (standard d’exécution de test de pénétration)
+
+1.Pré-engagement: définir quels sont les systèmes qui sont à auditer et ceux qui ne le sont, pas
+ le type de pentest à effectuer
+*Le pentest en WhiteBox où le pentester a accès à l’intégralité de l’infrastructure informatique
+*Le pentest en BlackBox où le pentester n’a au départ accès à rien d’autre qu’une information 
+très basique telle que, par exemple, le nom de la société 
+
+2.Collecte d’informations:toute information pouvant aider à connaitre, comprendre et analyser la cible
+Les adresses IP
+Les versions des logiciels utilisés
+Les captures réseau
+Les informations concernant le business/fonctionnement de la cible
+
+
+3.L’analyse des menaces: les informations récoltées à l’étape précédente afin d’observer le système
+comme un attaquant et de déterminer quels sont les points faibles ou les systèmes à attaquer
+
+
+4.La recherche de vulnérabilités:les systèmes concernés sont analysés à la recherche de vulnérabilités.
+L’idée est de lister ces dernières afin de certifier que l’utilisation d’un exploit particulier ménera 
+bel et bien à une exploitation réussie.
+
+
+5.L’exploitation :  l’on exploite les vulnérabilités trouvées sur les menaces analysées afin d’obtenir 
+un shell3 sur le système attaqué.
+
+
+6.La post exploitation:des données pourraient être dérobées, des backdoors pourraient être 
+persistées et de nouveaux systèmes pourraient être attaqués4.
+
+
+7.L’écriture d’un rapport : Elle consiste en l’écriture d’un document donnant la description dé
+taillée de ce qui a été fait lors du pentest de l’application.
+Le rapport doit donner les décisions prisent lors du pré-engagement, les informations 
+récoltées, les menaces misent en évidence ainsi les failles découvertes sur ces menaces. 
+Ensuite, chaque exploitation doit être expliquée et prouvée. Les informations de 
+post-exploitation doivent donner les nouvelles machines découvertes et les risques liés 
+à la faille exploitée.
+Le rapport doit également proposer des correctifs pour les failles exploitées ainsi que des 
+propositions générales quant’à l’amélioration de la sécurité dans la société ayant subi le pentest.
+
+dataset0 = dataset[dataset.lot == 0]
+dataset1 = dataset[dataset.lot == 1]
+
+plt.figure(figsize=(50, 50))
+plt.scatter(dataset0[:,0], X[:, 1], dataset0.latitude, color='blue')
+plt.scatter(dataset1.longitude, dataset1.latitude, color='red')
+plt.show()
+
+dataset.drop("outcome", 1, inplace=True)
